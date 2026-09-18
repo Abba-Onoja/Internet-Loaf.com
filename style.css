@@ -1,0 +1,438 @@
+/* =========================================================
+   intLoaF — portfolio site
+   Vanilla CSS. Font: Jost. Palette: black / white + lime,
+   blue, red, teal accents on the project grid.
+   ========================================================= */
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #d3d3d3;
+  --lime: #c9df3b;
+  --blue: #1d5ea8;
+  --red: #ea5238;
+  --teal: #74d6d1;
+
+  --border-nav: 1px;
+  --border-intro: 2px;
+  --header-height: 50px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Jost", sans-serif;
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header {
+  height: var(--header-height);
+  padding: 0 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 40;
+  background: var(--white);
+  border-bottom: var(--border-nav) solid var(--black);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.logo i {
+  font-style: italic;
+}
+
+.menu-toggle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu-toggle__box {
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+}
+
+/* =========================================================
+   MENU OVERLAY
+   ========================================================= */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 0.35s ease;
+}
+
+.menu-overlay.is-open {
+  transform: translateY(0);
+}
+
+.menu-overlay__list {
+  text-align: center;
+}
+
+.menu-overlay__list li + li {
+  margin-top: 1.25rem;
+}
+
+.menu-overlay__list a {
+  color: var(--white);
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.menu-overlay__list a:hover,
+.menu-overlay__list a:focus-visible {
+  opacity: 0.6;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro {
+  padding: 2rem 1.75rem 2rem;
+  border-bottom: var(--border-intro) solid var(--black);
+  width: 100%;
+}
+
+.intro__headline {
+  font-size: clamp(2.1rem, 6vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  max-width: 20ch;
+  letter-spacing: -0.01em;
+}
+
+.intro__subheadline {
+  margin-top: 1.5rem;
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-weight: 400;
+  max-width: 26ch;
+}
+
+/* =========================================================
+   PROJECTS TITLE
+   ========================================================= */
+
+.projects__title {
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-align: left;
+  padding: 2.5rem 1.75rem 1.5rem;
+}
+
+/* =========================================================
+   PROJECTS GRID — asymmetric 70/30, zero gap, full bleed
+   ========================================================= */
+
+.projects {
+  width: 100%;
+}
+
+.project-row {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.project-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.project-text {
+  flex: 0 0 70%;
+  max-width: 70%;
+  padding: 3rem 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.project-text--lime { background: var(--lime); }
+.project-text--blue { background: var(--blue); color: var(--white); }
+.project-text--red  { background: var(--red); }
+.project-text--teal { background: var(--teal); }
+
+.project-text__title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  max-width: 16ch;
+}
+
+.project-text__desc {
+  margin-top: 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 38ch;
+}
+
+.project-text__tags {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.tag:hover,
+.tag:focus-visible {
+  background-color: #333333;
+}
+
+.project-image {
+  flex: 0 0 30%;
+  max-width: 30%;
+  background: var(--grey);
+}
+
+/* =========================================================
+   VIEW MORE — floats over the grid/footer transition
+   ========================================================= */
+
+.view-more-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0 1.5rem;
+  margin-top: -1.6rem;
+  z-index: 6;
+}
+
+.view-more {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1rem 2.75rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.view-more:hover,
+.view-more:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer-wave {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 14vw;
+  min-height: 90px;
+  max-height: 220px;
+  background-image: url("assets/footer.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center bottom;
+  display: block;
+  margin-top: 100px;
+}
+
+.site-footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 0 1.75rem 3rem;
+  margin-top: -1px;
+}
+
+.site-footer__heading {
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  max-width: 22ch;
+  margin-bottom: 2rem;
+}
+
+.site-footer__links a {
+  display: block;
+  padding: 0.55rem 0;
+  font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+.site-footer__links a:hover,
+.site-footer__links a:focus-visible {
+  opacity: 0.6;
+}
+
+.site-footer__brand {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.site-footer__wordmark {
+  width: min(320px, 70vw);
+  height: auto;
+}
+
+.site-footer__privacy {
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.site-footer__privacy:hover,
+.site-footer__privacy:focus-visible {
+  opacity: 1;
+}
+
+/* =========================================================
+   RESPONSIVE — the 70/30 split holds at every screen size;
+   only spacing and type scale down, the row never stacks
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .project-row {
+    min-height: 260px;
+  }
+
+  .project-text {
+    padding: 1.25rem 1rem;
+    min-height: 0;
+  }
+
+  .project-text__title {
+    font-size: 1.15rem;
+    max-width: 15ch;
+  }
+
+  .project-text__desc {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+
+  .project-text__tags {
+    margin-top: 0.85rem;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .projects__title {
+    padding: 2rem 1.25rem 1.25rem;
+  }
+
+  .view-more {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.8rem;
+  }
+
+  .site-header {
+    padding: 0 1.25rem;
+  }
+
+  .intro {
+    padding: 2.5rem 1.25rem 2.25rem;
+  }
+
+  .site-footer {
+    padding: 0 1.25rem 2.5rem;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+
+.menu-overlay a:focus-visible {
+  outline-color: var(--white);
+}

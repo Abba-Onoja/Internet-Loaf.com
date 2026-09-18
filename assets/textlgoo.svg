@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471.86 116.6">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .02em;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-family: ArastinProFREEDEMO-Regular, 'Arastin Pro FREE DEMO';
+        font-size: 69.54px;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.08em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.03em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <text class="cls-2" transform="translate(11.24 72.33)"><tspan class="cls-5" x="0" y="0">I</tspan><tspan x="48.05" y="0">n</tspan><tspan class="cls-7" x="83.8" y="0">terne</tspan><tspan x="250.41" y="0">t </tspan><tspan class="cls-4" x="297.84" y="0">L</tspan><tspan class="cls-1" x="350.13" y="0">o</tspan><tspan class="cls-3" x="386.57" y="0">a</tspan><tspan class="cls-6" x="421.69" y="0">f</tspan></text>
+  </g>
+</svg>
