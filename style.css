@@ -1,21 +1,15 @@
-/* =========================================================
-   intLoaF — portfolio site
-   Vanilla CSS. Font: Jost. Palette: black / white + lime,
-   blue, red, teal accents on the project grid.
-   ========================================================= */
-
 :root {
   --black: #000000;
   --white: #ffffff;
   --grey: #d3d3d3;
-  --lime: #c9df3b;
+  --lime: #00ff00;
   --blue: #1d5ea8;
   --red: #ea5238;
   --teal: #74d6d1;
 
   --border-nav: 1px;
   --border-intro: 2px;
-  --header-height: 50px;
+  --header-height: 67px;
 }
 
 * {
@@ -172,6 +166,7 @@ img {
   letter-spacing: -0.01em;
   text-align: left;
   padding: 2.5rem 1.75rem 1.5rem;
+  text-decoration: underline;
 }
 
 /* =========================================================
@@ -186,6 +181,7 @@ img {
   display: flex;
   width: 100%;
   align-items: stretch;
+  min-height: 320px;
 }
 
 .project-row--reverse {
@@ -193,8 +189,8 @@ img {
 }
 
 .project-text {
-  flex: 0 0 70%;
-  max-width: 70%;
+  flex: 0 0 60%;
+  max-width: 40%;
   padding: 3rem 3rem 2.5rem;
   display: flex;
   flex-direction: column;
@@ -245,14 +241,14 @@ img {
 }
 
 .project-image {
-  flex: 0 0 30%;
-  max-width: 30%;
+  flex: 0 0 100%;
+  max-width: 60%;
   background: var(--grey);
 }
 
 /* =========================================================
    VIEW MORE — floats over the grid/footer transition
-   ========================================================= */
+   ========================================================= 
 
 .view-more-wrap {
   position: relative;
@@ -280,6 +276,69 @@ img {
 .view-more:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 16px 28px rgba(0, 0, 0, 0.4);
+}
+  */
+
+
+/* =========================================================
+   cta
+   ========================================================= */
+.cta {
+  background: var(--black);
+  color: var(--white);
+  text-align: left;
+  padding: 4rem 3rem 4.5rem;
+  margin-top: 3rem;
+  margin-left: 0;
+  margin-right: 0;
+  /* full-bleed, no border */
+}
+
+.cta__title {
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-align: left;
+  padding: 0;
+  max-width: 18ch;
+}
+
+.cta__desc {
+  margin-top: 1.25rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 34ch;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  background: none;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+  padding: 0;
+  box-shadow: none;
+  border-bottom: 1px solid var(--white);
+  padding-bottom: 0.2rem;
+  transition: border-color 0.2s ease, gap 0.2s ease;
+}
+
+.cta__button:hover,
+.cta__button:focus-visible {
+  border-color: var(--white);
+  gap: 0.75rem;
+}
+
+.cta__button::after {
+  content: "→";
 }
 
 /* =========================================================
@@ -359,8 +418,7 @@ img {
 }
 
 /* =========================================================
-   RESPONSIVE — the 70/30 split holds at every screen size;
-   only spacing and type scale down, the row never stacks
+   MOBILE
    ========================================================= */
 
 @media (max-width: 760px) {
