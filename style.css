@@ -253,6 +253,14 @@ img {
   background: var(--grey);
 }
 
+.project-date {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--grey);
+}
+
 /* =========================================================
    VIEW MORE — floats over the grid/footer transition
    ========================================================= 
