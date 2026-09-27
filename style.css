@@ -6,7 +6,7 @@
   --lime: #00ff00;
   --blue: #1d5ea8;
   --red: #ea5238;
-  --teal: #74d6d1;
+  --teal: #00E676;
 
   --border-nav: 1px;
   --border-intro: 2px;
@@ -203,12 +203,13 @@ img {
   flex-direction: column;
   justify-content: center;
   min-height: 200px;
+  color: var(--black);
 }
 
-.project-text--lime { background: var(--lime); }
-.project-text--blue { background: var(--blue); color: var(--white); }
-.project-text--red  { background: var(--red); }
-.project-text--teal { background: var(--teal); }
+.project-text--lime { background: var(--lime);  }
+.project-text--blue { background: var(--blue);  }
+.project-text--red  { background: var(--red);  }
+.project-text--teal { background: var(--teal);  }
 
 .project-text__title {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
@@ -254,12 +255,14 @@ img {
 }
 
 .project-date {
-  margin-top: 1rem;
-  padding-top: 2rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
   font-size: 0.8rem;
   font-weight: 400;
-  color: var(--grey);
+  color:var(--black);
 }
+
+
 
 /* =========================================================
    VIEW MORE — floats over the grid/footer transition
