@@ -432,6 +432,7 @@ img {
   margin-top: -1.5rem;
 }
 
+
 .site-footer__links a {
   display: block;
   padding: 0.55rem 0;
@@ -440,12 +441,14 @@ img {
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-  transition: opacity 0.2s ease;
+  transform-origin: left center;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.25s ease;
 }
 
 .site-footer__links a:hover,
 .site-footer__links a:focus-visible {
-  opacity: 0.6;
+  color: var(--teal);
+  transform: scale(1.1);
 }
 
 .site-footer__brand {
@@ -474,7 +477,34 @@ img {
   opacity: 1;
 }
 
+.name-link {
+  color: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
 
+.name-link::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.2em;
+  font-size: 0.7em;
+  transition: transform 0.25s ease;
+}
+
+.name-link:hover,
+.name-link:focus-visible {
+  color: var(--teal);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.2em;
+  transform: scale(1.1);
+}
+
+.name-link:hover::after,
+.name-link:focus-visible::after {
+  transform: rotate(60deg);
+}
 
 /* =========================================================
    MOBILE
